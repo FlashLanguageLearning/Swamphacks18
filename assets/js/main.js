@@ -72,7 +72,7 @@ $allVideos.each(function() {
 });
 
 /**
- * Match height 
+ * Match height
  */
 $('.row-eq-height > [class*="col-"]').matchHeight();
 
@@ -155,13 +155,13 @@ if(windowWidth > 1200) {
 
 $('.js-consult-form .js-consult-form__content').css('bottom', - _hForm);
 
-if(windowWidth > 768) { 
+if(windowWidth > 768) {
 		$('.js-consult-form + *').css('padding-top', _paddingTop);
 	}
 }
 
 consultForm();
-var myEfficientFn = debounce(function() {	
+var myEfficientFn = debounce(function() {
 	consultForm();
 }, 250);
 
@@ -350,11 +350,10 @@ if(windowWidth > 1200) {
 }
 
 slider();
-var myEfficientFn = debounce(function() {	
+var myEfficientFn = debounce(function() {
 	slider();
 }, 250);
 
 window.addEventListener('resize', myEfficientFn);
 
 })(jQuery);
-
