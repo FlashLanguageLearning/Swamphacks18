@@ -3807,8 +3807,8 @@ mark, .mark {
 }
 
 .header__logo {
-    height: 100px;
-    max-width: 100px;
+    height: 200px;
+    max-width: 200px;
     line-height: 100px;
     float: left;
     transition: height .3s ease;
