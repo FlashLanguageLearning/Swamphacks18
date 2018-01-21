@@ -34,7 +34,7 @@
 		  padding: 150px 0px;
 		}
 		label { display: block; float: left; width: 150px; text-align: right; padding-right: 10px; font-size: 16pt;}
-		#instructions { font-size:10pt; text-align:center; visibility:hidden; display:block; float:none; width:300px; margin:0px auto; }
+		#instructions { font-size:12pt; font-style: bold; text-align:center; visibility:hidden; display:block; float:none; width:300px; margin:0px auto; }
 		span { display: block; float: left; width: 100px; font-style: bold; font-size: 16pt; color: #000; }
 		div.comment { font-size: 30px; }
 		img { margin: 0px auto; }
@@ -360,10 +360,12 @@
 									      end();
 									      return;
 									    }
+											document.getElementById('card').style.color = '#626262';
 									    el('card').innerHTML = words[wordIndex][0];
 									    wordTime = (new Date()).getTime();
 									  }
 									  function end() {
+											document.getElementById('card').style.color = '#626262';
 									    var average = ((new Date()).getTime() - startTime) / (1000.0 * words.length);
 									    el('wordTime').innerHTML = Math.floor(average) + '.' + Math.floor((average*10) % 10);
 									    el('wordTime').setAttribute('class', lateClass(average) );
@@ -385,7 +387,7 @@
 									    if (!evt)
 									      var evt = window.event;
 									    var code = evt.keyCode || evt.which;
-									    if (( code == 32 ) && ( timer != null )) {
+									    if (( code == 37 ) && ( timer != null )) {
 
 
 
@@ -394,9 +396,19 @@
 									      // if (words[wordIndex][1] != 5){
 									      //
 									      // }
+												document.getElementById('card').style.color = '#29c439';
+									      el('card').innerHTML = words[wordIndex++][1];
+									      setTimeout(function () {
+									      nextWord();
+									    }, 1000);
 
+										} else if (( code == 39 ) && ( timer != null )) {
 
-
+									      // // if words[wordIndex++][1]; is what api says, flash green, else flash red and move card down
+									      // if (words[wordIndex][1] != 5){
+									      //
+									      // }
+												document.getElementById('card').style.color = '#f93636';
 									      el('card').innerHTML = words[wordIndex++][1];
 									      setTimeout(function () {
 									      nextWord();
